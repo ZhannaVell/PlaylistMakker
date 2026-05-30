@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="margin_top_first_item">29dp</dimen>
+    <dimen name="margin_top_title">10dp</dimen>
+    <dimen name="margin_bottom_title">40dp</dimen>
+    <dimen name="margin_between_buttons">16dp</dimen>
+
+
+    <dimen name="settings_item_height">61dp</dimen>
+
+
+    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="text_size_button">16sp</dimen>
+    <dimen name="text_size_settings">16sp</dimen>
+
+
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="icon_padding">10dp</dimen>
+
+    <dimen name="corner_radius">16dp</dimen>
+</resources>

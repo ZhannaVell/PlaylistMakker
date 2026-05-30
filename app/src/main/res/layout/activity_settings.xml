@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingStart="@dimen/padding_default"
+    android:paddingEnd="@dimen/padding_default">
+
+    <!-- Заголовок с иконкой назад -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/margin_top_title"
+        android:layout_marginBottom="@dimen/margin_bottom_title">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_support_arrow"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            style="@style/SettingsTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/settings" />
+
+    </LinearLayout>
+
+    <!-- Тёмная тема  -->
+    <LinearLayout
+        style="@style/SettingsItem"
+        android:layout_marginTop="@dimen/margin_top_first_item"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/SettingsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/dark_theme" />
+
+        <Switch
+            android:id="@+id/switch_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding_default"
+            android:thumbTint="@color/switch_thumb"
+            android:trackTint="@color/switch_track" />
+
+    </LinearLayout>
+
+    <!-- Поделиться приложением -->
+    <LinearLayout
+        style="@style/SettingsItem"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/SettingsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/share_app" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_share"
+            android:layout_marginEnd="@dimen/padding_default" />
+
+    </LinearLayout>
+
+    <!-- Написать в поддержку -->
+    <LinearLayout
+        style="@style/SettingsItem"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/SettingsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/write_to_support" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_support_button"
+            android:layout_marginEnd="@dimen/padding_default" />
+
+    </LinearLayout>
+
+    <!-- Пользовательское соглашение -->
+    <LinearLayout
+        style="@style/SettingsItem"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/SettingsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/user_agreement" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow"
+            android:layout_marginEnd="@dimen/padding_default" />
+
+    </LinearLayout>
+
+</LinearLayout>
