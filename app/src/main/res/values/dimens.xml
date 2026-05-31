@@ -7,6 +7,12 @@
     <dimen name="margin_bottom_title">40dp</dimen>
     <dimen name="margin_between_buttons">16dp</dimen>
 
+    <dimen name="settings_text_margin_top">21dp</dimen>
+    <dimen name="settings_text_margin_start">16dp</dimen>
+
+
+    <dimen name="settings_icon_margin_top">19dp</dimen>
+
 
     <dimen name="settings_item_height">61dp</dimen>
 
