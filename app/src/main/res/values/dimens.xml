@@ -26,4 +26,19 @@
     <dimen name="icon_padding">10dp</dimen>
 
     <dimen name="corner_radius">16dp</dimen>
+
+    <dimen name="settings_title_margin_start">12dp</dimen>
+    <dimen name="settings_title_margin_top">12dp</dimen>
+    <dimen name="back_button_margin_top">12dp</dimen>
+    <dimen name="back_button_margin_start">12dp</dimen>
+    <dimen name="back_button_margin_end">16dp</dimen>
+
+    <dimen name="search_edit_text_padding_start">16dp</dimen>
+    <dimen name="search_edit_text_padding_end">56dp</dimen>
+    <dimen name="search_edit_text_padding_vertical">12dp</dimen>
+    <dimen name="search_icon_margin_end">16dp</dimen>
+    <dimen name="search_icon_size">24dp</dimen>
+    <dimen name="search_edit_text_corner_radius">8dp</dimen>
+    <dimen name="search_margin_top">16dp</dimen>
+
 </resources>

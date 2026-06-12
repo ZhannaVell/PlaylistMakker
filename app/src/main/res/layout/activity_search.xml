@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    android:orientation="vertical"
+    android:background="?attr/colorSurface"
+    android:paddingStart="@dimen/padding_default"
+    android:paddingEnd="@dimen/padding_default">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Заголовок сo стрелкой назад-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_title"
+        android:layout_marginBottom="@dimen/margin_bottom_title"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back_button"
+            style="@style/BackButtonIcon"
+            android:src="@drawable/ic_back_arrow_24"/>
+
+        <TextView
+            style="@style/SettingsTitle"
+            android:text="@string/search" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- лупа (внутри EditText слева) -->
+        <EditText
+            android:id="@+id/searchEditText"
+            style="@style/SearchEditTextStyle" />
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="@dimen/search_icon_size"
+            android:layout_height="@dimen/search_icon_size"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_search_24"
+            android:tint="@color/search_icon_edit_text"/>
+
+        <!-- Кнопка очистки -->
+        <ImageView
+            android:id="@+id/clearSearchButton"
+            android:layout_width="@dimen/search_icon_size"
+            android:layout_height="@dimen/search_icon_size"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="@dimen/search_icon_margin_end"
+            android:src="@drawable/ic_clear_16"
+            android:tint="@color/clear_icon_tint"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </FrameLayout>
+
+    <!-- Заглушка "Результаты поиска будут здесь" -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/search_placeholder"
+        android:textColor="?attr/colorOnSurface"
+        android:visibility="gone" />
+
+</LinearLayout>
+
+
+
