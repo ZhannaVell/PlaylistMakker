@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+        buttonSearch.setOnClickListener(searchClickListener)
 
 
         buttonMedia.setOnClickListener{
