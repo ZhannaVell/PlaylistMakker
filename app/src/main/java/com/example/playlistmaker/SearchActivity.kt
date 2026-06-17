@@ -13,18 +13,20 @@ import androidx.core.view.WindowInsetsCompat
 
 class SearchActivity : AppCompatActivity() {
 
-    private lateinit var searchEditText: EditText
+    /*private lateinit var searchEditText: EditText
     private lateinit var clearSearchButton: ImageView
     private lateinit var backButton: ImageView
 
-    private var searchQuery: String =""
+    private var searchQuery: String = ""*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_search)
+    }
+}
 
-        searchEditText = findViewById(R.id.searchEditText)
+       /* searchEditText = findViewById(R.id.searchEditText)
         clearSearchButton = findViewById(R.id.clearSearchButton)
         backButton = findViewById(R.id.back_button)
 
@@ -65,5 +67,5 @@ class SearchActivity : AppCompatActivity() {
     companion object {
         private const val SEARCH_QUERY_KEY = "SEARCH_QUERY_KEY"
     }
-}
+}*/
 

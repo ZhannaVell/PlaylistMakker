@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="switch_track">#9FBBF3</color>
-    <color name="switch_thumb">#3772E7</color>
+    <color name="blue">#3772E7</color>
     <color name="white">#FFFFFF</color>
-    <color name="search_hint_text_color">#1A1B22</color>
-    <color name="search_icon_edit_text">#1A1B22</color>
-
-    <color name="main_background_color">#1A1B22</color>
-    <color name="edit_text_background">#FFFFFF</color>
-    <color name="clear_icon_tint">#AEAFB4</color>
-
+    <color name="black">#1A1B22</color>
 </resources>

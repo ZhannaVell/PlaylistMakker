@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.textview.MaterialTextView
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,12 +15,12 @@ class SettingsActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_settings)
 
-        val backButton = findViewById<ImageView>(R.id.back_button)
-        val shareItem = findViewById<LinearLayout>(R.id.share_item)
-        val supportItem = findViewById<LinearLayout>(R.id.support_item)
-        val agreementItem = findViewById<LinearLayout>(R.id.agreement_item)
+        val backButton = findViewById<MaterialToolbar>(R.id.tbSettings)
+        val shareItem = findViewById<MaterialTextView>(R.id.tv_share)
+        val supportItem = findViewById<MaterialTextView>(R.id.tv_support)
+        val agreementItem = findViewById<MaterialTextView>(R.id.tv_agreement)
 
-        backButton.setOnClickListener {
+        backButton.setNavigationOnClickListener {
             finish()
         }
         shareItem.setOnClickListener {
