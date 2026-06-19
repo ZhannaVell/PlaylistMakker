@@ -4,68 +4,97 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
-import androidx.activity.enableEdgeToEdge
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
+import com.google.android.material.appbar.MaterialToolbar
+
 
 class SearchActivity : AppCompatActivity() {
 
-    /*private lateinit var searchEditText: EditText
-    private lateinit var clearSearchButton: ImageView
-    private lateinit var backButton: ImageView
-
-    private var searchQuery: String = ""*/
+    private lateinit var searchEditText: EditText
+    private lateinit var clearButton: ImageView
+    private var searchText: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_search)
-    }
-}
 
-       /* searchEditText = findViewById(R.id.searchEditText)
-        clearSearchButton = findViewById(R.id.clearSearchButton)
-        backButton = findViewById(R.id.back_button)
 
-        backButton.setOnClickListener {
+        val toolbar = findViewById<MaterialToolbar>(R.id.tbSearch)
+        toolbar.setNavigationOnClickListener {
             finish()
+        }
 
-    }
-        clearSearchButton.setOnClickListener {
-            searchEditText.text.clear()
-            hideKeyboard()
-}
+
+        searchEditText = findViewById(R.id.searchEditText)
+        clearButton = findViewById(R.id.clearButton)
+
+
+
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                searchQuery = s?.toString() ?: ""
-                clearSearchButton.visibility = if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
+
+                if (!s.isNullOrEmpty()) {
+                    clearButton.visibility = View.VISIBLE
+                    searchText = s.toString()
+                } else {
+                    clearButton.visibility = View.GONE
+                    searchText = ""
+                }
+
             }
 
             override fun afterTextChanged(s: Editable?) {}
         }
 
         searchEditText.addTextChangedListener(textWatcher)
-        savedInstanceState?.let {
-            searchQuery = it.getString(SEARCH_QUERY_KEY, "")
-            searchEditText.setText(searchQuery)
+
+
+        if (savedInstanceState != null) {
+            val savedText = savedInstanceState.getString("SEARCH_TEXT", "")
+            if (savedText.isNotEmpty()) {
+                searchEditText.setText(savedText)
+                searchEditText.setSelection(savedText.length)
+                }
+            }
+        clearButton.setOnClickListener {
+            searchEditText.setText("")
+            hideKeyboard()
+
+    }
+        searchEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                hideKeyboard()
+                true
+            } else false
         }
     }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putString(SEARCH_QUERY_KEY, searchQuery)
+        outState.putString("SEARCH_TEXT", searchText)
     }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val savedText = savedInstanceState.getString("SEARCH_TEXT", "")
+        if (savedText.isNotEmpty()) {
+            searchEditText.setText(savedText)
+            searchEditText.setSelection(savedText.length)
+        }
+    }
+
 
     private fun hideKeyboard() {
-        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(searchEditText.windowToken, 0)
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(searchEditText.windowToken, 0)
     }
-    companion object {
-        private const val SEARCH_QUERY_KEY = "SEARCH_QUERY_KEY"
-    }
-}*/
 
+}

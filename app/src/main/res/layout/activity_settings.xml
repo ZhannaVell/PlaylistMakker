@@ -4,18 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="?attr/colorSurface">
 
     <!-- Заголовок с иконкой назад -->
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tbSettings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:navigationIcon="@drawable/ic_back_arrow_24"
-        app:title="@string/settings"
-        app:titleTextColor="@color/black"
-        app:titleTextAppearance="@style/titles"/>
+        style="@style/TitleIcBack"
+        app:title="@string/settings" />
 
 
     <!--темная тема-->
@@ -23,7 +19,7 @@
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/theme_switch"
         style="@style/Settings"
-        android:text="@string/dark_theme"/>
+        android:text="@string/dark_theme" />
 
     <!-- Поделиться приложением -->
 
